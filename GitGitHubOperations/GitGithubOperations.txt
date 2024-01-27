@@ -1,0 +1,38 @@
+// All git operations are performed in the project root directory
+
+
+
+
+
+1. Commit and then push updates to Github
+
+1-1. Add files in need of commit from the working directory to the staging area
+
+git add . // This command adds all changes (new, modified, or deleted files) in the current directory and its subdirectories to the staging area.
+
+git add {filename.fileextension} // to add a specific file
+eg. git add file1.txt
+
+git add {file1name.fileextension} {file2name.file2extension} {file3name.file3extension} // to add multiple files
+eg. git add file1.txt file2.txt file3.js file4.html
+
+git add --all // This command adds all changes in the entire repository to the staging area.
+
+1-2 (optional) Check which files are in the staging area
+
+git status // to see the status of your working directory and the changes in the staging area.
+
+1-3 Commit files in staging area // helps to know what changes you have made in each commit
+
+git commit -m "{message}" // This commits the changes you've added to the staging area with the specified commit message. 
+eg. git commit -m "add file1.txt with base code"
+
+1-4 Push changes to remote repository
+
+git push
+
+
+
+
+
+2.

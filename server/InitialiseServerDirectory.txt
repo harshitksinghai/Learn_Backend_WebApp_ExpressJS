@@ -1,0 +1,29 @@
+1. Create server.js file inside server directory
+
+2. Initialise npm
+
+npm init // if you dont want to go through the setup process for npm, instead type:
+// npm init -y
+
+3. If you want your project to use ES6 module-based system (eg. using import), inside package.json file, type:
+
+"type":"module"
+
+4. Add .env file in server directory, and type in file:
+
+NODE_ENV=development
+// mention the port number you are going to use
+PORT=3000
+
+5. Install basic dependencies:
+
+// include nodemon if not yet installed
+
+npm i express nodemon dotenv
+
+// you can also type: npm install express nodemon 
+// (or install individually)
+
+6. After typing initial server startup code in server.js, start nodemon:
+
+nodemon server.js
