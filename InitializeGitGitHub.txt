@@ -1,0 +1,44 @@
+// -> comment
+
+1. Create new repository in GitHub
+
+2. 1. …or create a new repository on the command line
+
+2. 1. 1. In the Project Directory:
+
+echo ".DS_Store" >> .gitignore
+echo "# Learn_Backend_WebApp_ExpressJS" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/harshitksinghai/Learn_Backend_WebApp_ExpressJS.git
+
+// Set an email address in Git. (Choose the one set to primary email address in GitHub)
+// You can change the email address associated with commits you make in a single repository. This will override your global Git configuration settings in this one repository, but will not affect any other repositories.
+git config user.email "YOUR_EMAIL" 
+
+// Confirm that you have set the email address correctly in Git:
+git config user.email
+
+git push -u origin main
+
+2. 2. …or push an existing repository from the command line
+
+2. 2. 1. In the Project Directory:
+
+git remote add origin https://github.com/harshitksinghai/Learn_Backend_WebApp_ExpressJS.git
+git branch -M main
+
+// Set an email address in Git. (Choose the one set to primary email address in GitHub)
+git config --global user.email "YOUR_EMAIL" 
+
+// Confirm that you have set the email address correctly in Git:
+git config --global user.email
+
+// Assuming .gitignore is already set up:
+git push -u origin main
+
+
+
+
