@@ -7,3 +7,6 @@ when we say "instance of the Express application," we are referring to an object
 
 3. Referencing an object
 When we say a variable is "referencing" an object, it means that the variable holds a reference to the memory location where an object is stored.
+
+4. Content-Type Header
+When a client sends a request to the server, it includes a Content-Type header in the HTTP request. This header indicates the type of data being sent in the request body.
