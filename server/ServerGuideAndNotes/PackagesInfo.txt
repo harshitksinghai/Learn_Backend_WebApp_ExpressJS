@@ -1,0 +1,8 @@
+1. dotenv
+
+loads environment variables from a .env file into process.env. 
+
+dotenv module itself does not have any external dependencies. Therefore it is a zero-dependency module.
+A "zero-dependency" module is one that doesn't require any other external modules or packages to be installed for it to work correctly.
+
+2. 

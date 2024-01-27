@@ -1,0 +1,9 @@
+1. Parse
+process of analyzing input to extract meaningful info
+
+2. Instance and Object
+when you create an object from a class, you are said to be creating an instance of that class.
+when we say "instance of the Express application," we are referring to an object created from the express function.
+
+3. Referencing an object
+When we say a variable is "referencing" an object, it means that the variable holds a reference to the memory location where an object is stored.
