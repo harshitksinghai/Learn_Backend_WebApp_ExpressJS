@@ -9,7 +9,7 @@ const registerUser = (req, res) => {
 // @desc    Authenticate a User
 // route    POST /api/users/auth
 // @access  Public
-const AuthUser = (req, res) => {
+const authUser = (req, res) => {
     res.json({message: 'login user'});
 }
 
