@@ -5,4 +5,8 @@ loads environment variables from a .env file into process.env.
 dotenv module itself does not have any external dependencies. Therefore it is a zero-dependency module.
 A "zero-dependency" module is one that doesn't require any other external modules or packages to be installed for it to work correctly.
 
-2. 
+2. asyncHandler from 'express-async-handler'
+
+this eliminates the need for try-catch blocks as it automatically catches the error and passes it to the error handling middleware. So, our functions in userController will be more neat and modular
+
+3. 

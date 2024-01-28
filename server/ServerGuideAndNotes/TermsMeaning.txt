@@ -10,3 +10,14 @@ When we say a variable is "referencing" an object, it means that the variable ho
 
 4. Content-Type Header
 When a client sends a request to the server, it includes a Content-Type header in the HTTP request. This header indicates the type of data being sent in the request body.
+
+5. async and await
+Asynchronous functions in JavaScript are designated with the async keyword. They operate concurrently with the event loop, and the await keyword is used within them to pause execution until a Promise settles, either resolving or rejecting, facilitating non-blocking code execution.
+
+Explained with an example:
+the function in which this "await User.findOne({email: email})" line of code is written is an asynchronous function.
+await User.findOne({email: email}): This line is an asynchronous database query using await. It allows the code to pause and wait for the User.findOne operation to complete before moving on. During this waiting period, the event loop is free to handle other tasks, preventing the entire program from blocking.
+
+6. 
+
+
