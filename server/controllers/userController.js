@@ -37,7 +37,22 @@ const registerUser = asyncHandler(async (req, res) => { // async and await are e
 // route    POST /api/users/auth
 // @access  Public
 const authUser = asyncHandler(async (req, res) => {
-    res.json({ message: 'login user' });
+    const {email, password} = req.body;
+
+    const user = await User.findOne({email: email}); // this will return a js object that contains all the info of the matched user
+
+    if(user && (await user.matchPassword(password))){
+        generateToken(res, user._id);
+        res.status(201).json({
+            _id: user._id,
+            name: user.name,
+            email: user.email
+        });
+    }
+    else{
+        res.status(401);
+        throw new Error('Invalid email or password');
+    }
 });
 
 // @desc    Logout User
