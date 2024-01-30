@@ -6,7 +6,7 @@ import {
     logoutUser,
     getUserMainPage
 } from '../controllers/userController.js';
-
+import {protect} from '../middleware/authMiddleware.js';
 
 const router = express.Router(); // express.Router() function creates a new router object. // A router in Express is a middleware and routing system that allows you to group routes and middleware, making your code more modular and organized.
 
@@ -18,10 +18,10 @@ const router = express.Router(); // express.Router() function creates a new rout
 // Logout User - /logout
 // Main Page for Authenticated Users - /main
 
-// 3. Write code to define the specific routes and functions for requests
+// 3. Write code to define the specific routes and functions for requests (creating user route handlers)
 router.post('/', registerUser); // final route will be /api/users/
 router.post('/auth', authUser); // final route will be /api/users/auth
 router.post('/logout', logoutUser); // final route will be /api/users/logout
-router.get('/main', getUserMainPage); // final route will be /api/users/main
+router.get('/main', protect, getUserMainPage); // final route will be /api/users/main
 
 export default router;
