@@ -59,7 +59,7 @@ const authUser = asyncHandler(async (req, res) => {
 // route    POST /api/users/logout
 // @access  Public
 const logoutUser = asyncHandler(async (req, res) => {
-    res.cookie('jwt', '', {
+    res.cookie('jwt', '', { // When you set a new cookie with the same name as an existing cookie, the browser automatically overwrites the existing cookie with the new one. 
         httpOnly: true,
         expires: new Date(0)
     }); 
