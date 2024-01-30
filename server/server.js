@@ -17,6 +17,9 @@ app.get('/', (req, res) => { // when client/user access URL '/' for HTTP GET req
     res.send("Server up and running!");
 });
 
+app.use(notFound); // this is a middleware // this line of code is written after all route handlers for handling HTTP requests. // i think the reason is that if code has reached this line, means none of the route handlers were executed, so this middleware then gives NOT FOUND error.
+app.use(errorHandler); // this is an error handling middleware (to know more, go into errorMiddleware.js) and it can only be invoked if next(error) is called by some code, so then error-handling middleware will handle the error 
+
 app.listen(port, ()=>{ // This line starts the Express application to listen for incoming HTTP requests on the specified port (port).
     console.log("Server running on port 3000");
 });
