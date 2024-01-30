@@ -1,4 +1,5 @@
 import asyncHandler from 'express-async-handler'; // this eliminates the need for try-catch blocks as it automatically catches the error and passes it to the error handling middleware. So, our functions in userController will be more neat and modular
+import User from '../models/userModel.js';
 
 // @desc    Register a User
 // route    POST /api/users
