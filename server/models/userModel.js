@@ -29,8 +29,8 @@ userSchema.pre('save', async function(next){
     this.password = await bcrypt.hash(this.password, salt);
 });
 
-userSchema.methods.matchPassword(enteredPassword){
-    return await bcrypt.compare(enteredPassword, this.password);
+userSchema.methods.matchPassword = async function(enteredPassword){ // adding a custom matchPassword method to the userSchema
+    return await bcrypt.compare(enteredPassword, this.password); // returns true if same, else returns false
 }
 
 const User = mongoose.model('User', userSchema);
