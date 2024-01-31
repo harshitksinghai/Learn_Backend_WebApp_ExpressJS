@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
-import User from '../models/userModel';
+import User from '../models/userModel.js';
 
 const protect = asyncHandler(async (req, res, next) => {
     const token = req.cookies.jwt; // req.cookies.jwt retrieves the value of the jwt cookie which is then provided to the token variable
@@ -8,6 +8,7 @@ const protect = asyncHandler(async (req, res, next) => {
         try {
             const decoded = await jwt.verify(token, process.env.JWT_SECRET); // checks if the token has been tampered with
             req.user = await User.findById(decoded.userID).select('-password'); // userID was in the payload in jwt token, and this userID is now used to identify the user data in the database for further use. password field in database is excluded as it currently does not have any more purpose.
+            next();
         } 
         catch (error) {
             res.status(401);

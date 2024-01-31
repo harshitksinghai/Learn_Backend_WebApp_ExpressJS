@@ -1,8 +1,9 @@
 import express from "express";
 import dotenv from 'dotenv'; // loads environment variables from a .env file into process.env. 
-import userRoutes from '.routes/userRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 import connectDB from './config/db.js';
 import cookieParser from "cookie-parser";
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 dotenv.config(); // reads the .env file, assigns the key-value pairs in .env file to the process.env object
 connectDB();
@@ -13,7 +14,7 @@ const port = process.env.PORT;
 app.use(express.json()); // The express.json() middleware checks the Content-Type header of the incoming request. If the Content-Type is application/json, it attempts to parse the request body as JSON and populates req.body with the parsed JSON data. If the Content-Type is not application/json, the middleware ignores the request body, and req.body remains an empty object.
 app.use(express.urlencoded({extended: true})); // The express.urlencoded({ extended: true }) middleware checks the Content-Type header of the incoming request. If the Content-Type is application/x-www-form-urlencoded, it attempts to parse the request body as URL-encoded data and populates req.body with the parsed data. If the Content-Type is not application/x-www-form-urlencoded, the middleware ignores the request body, and req.body remains an empty object.
 
-app.use(cookieParser); // This middleware will parse the incoming Cookie header and populate req.cookies with an object representing the parsed cookies.
+app.use(cookieParser()); // This middleware will parse the incoming Cookie header and populate req.cookies with an object representing the parsed cookies.
 
 app.use('/api/users', userRoutes); // userRoutes router will handle requests that start with '/api/users'.
 
